@@ -10,10 +10,19 @@ const STATUS_STYLES: Record<string, string> = {
   Draft: "bg-slate-100 text-slate-600",
 };
 
-export default function StatusPill({ status }: { status: keyof typeof STATUS_STYLES | string }) {
+export default function StatusPill({
+  status,
+}: {
+  status: keyof typeof STATUS_STYLES | string;
+}) {
   const cls = STATUS_STYLES[status] ?? "bg-slate-100 text-slate-700";
   return (
-    <span className={cn("inline-flex items-center rounded-full px-3 py-1 text-xs font-medium", cls)}>
+    <span
+      className={cn(
+        "inline-flex items-center rounded-full px-3 py-1 text-xs font-medium",
+        cls,
+      )}
+    >
       {status}
     </span>
   );

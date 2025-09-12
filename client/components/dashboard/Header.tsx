@@ -16,14 +16,17 @@ export default function Header({ title = "Dashboard", onBack }: HeaderProps) {
             aria-label="Back"
             onClick={onBack}
             className={cn(
-              "flex items-center gap-1 text-sm text-foreground/80 transition-colors hover:text-foreground"
+              "flex items-center gap-1 text-sm text-foreground/80 transition-colors hover:text-foreground",
             )}
           >
             <ArrowLeft className="h-4 w-4" />
             <span>Back</span>
           </button>
           <div className="text-sm font-semibold">{title}</div>
-          <button aria-label="Profile" className="h-7 w-7 overflow-hidden rounded-full ring-2 ring-white">
+          <button
+            aria-label="Profile"
+            className="h-7 w-7 overflow-hidden rounded-full ring-2 ring-white"
+          >
             <img
               alt="Profile"
               src="https://i.pravatar.cc/56?img=5"

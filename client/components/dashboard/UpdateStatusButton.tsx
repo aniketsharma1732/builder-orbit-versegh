@@ -1,5 +1,10 @@
 import { ChevronDown } from "lucide-react";
-import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "@/components/ui/dropdown-menu";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
 
 interface Props {
   value: string;
@@ -7,7 +12,15 @@ interface Props {
 }
 
 export default function UpdateStatusButton({ value, onChange }: Props) {
-  const statuses = ["Unpaid", "Paid", "Partially Paid", "Overdue", "Awaited", "Disputed", "Draft"];
+  const statuses = [
+    "Unpaid",
+    "Paid",
+    "Partially Paid",
+    "Overdue",
+    "Awaited",
+    "Disputed",
+    "Draft",
+  ];
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
@@ -17,7 +30,9 @@ export default function UpdateStatusButton({ value, onChange }: Props) {
       </DropdownMenuTrigger>
       <DropdownMenuContent align="end">
         {statuses.map((s) => (
-          <DropdownMenuItem key={s} onClick={() => onChange(s)}>{s}</DropdownMenuItem>
+          <DropdownMenuItem key={s} onClick={() => onChange(s)}>
+            {s}
+          </DropdownMenuItem>
         ))}
       </DropdownMenuContent>
     </DropdownMenu>
