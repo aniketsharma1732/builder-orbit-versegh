@@ -4,14 +4,17 @@ import KPI from "@/components/dashboard/KPI";
 import PeriodSelector from "@/components/dashboard/PeriodSelector";
 import IncomeChart from "@/components/dashboard/IncomeChart";
 import InvoiceListItem from "@/components/dashboard/InvoiceListItem";
-import { Plus } from "lucide-react";
+import UpdateStatusButton from "@/components/dashboard/UpdateStatusButton";
+import { Plus, ChevronDown } from "lucide-react";
 import { Card } from "@/components/ui/card";
 
 export default function Index() {
   const [period, setPeriod] = useState<"1M" | "3M" | "1Y">("3M");
+  const [invoicesOpen, setInvoicesOpen] = useState(true);
+  const [firstStatus, setFirstStatus] = useState("Unpaid");
 
   const invoices = [
-    { title: "Client Name", amount: "1,25,000", due: "2024-06-15", status: "Unpaid" },
+    { title: "Client Name", amount: "1,25,000", due: "2024-06-15", status: firstStatus },
     { title: "Client Name", amount: "1,25,000", due: "2024-06-15", status: "Disputed" },
     { title: "Income Trend", amount: "1,25,000", due: "2024-06-15", status: "Paid" },
     { title: "Income Trend", amount: "1,25,000", due: "2024-06-15", status: "Partially Paid" },
@@ -59,14 +62,29 @@ export default function Index() {
         </section>
 
         <section className="mt-6">
-          <div className="mb-3 flex items-center justify-between">
+          <button
+            className="mb-3 flex w-full items-center justify-between"
+            onClick={() => setInvoicesOpen((v) => !v)}
+            aria-expanded={invoicesOpen}
+          >
             <h3 className="text-base font-semibold">Your Invoices</h3>
-          </div>
-          <div className="space-y-3">
-            {invoices.map((inv, idx) => (
-              <InvoiceListItem key={idx} {...inv} />
-            ))}
-          </div>
+            <ChevronDown className={`h-5 w-5 transition-transform ${invoicesOpen ? "rotate-180" : "rotate-0"}`} />
+          </button>
+          {invoicesOpen && (
+            <div className="space-y-3">
+              {invoices.map((inv, idx) => (
+                <InvoiceListItem
+                  key={idx}
+                  {...inv}
+                  rightElement={
+                    idx === 0 ? (
+                      <UpdateStatusButton value={firstStatus} onChange={setFirstStatus} />
+                    ) : undefined
+                  }
+                />
+              ))}
+            </div>
+          )}
         </section>
       </main>
     </div>
