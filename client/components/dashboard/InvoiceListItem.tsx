@@ -21,7 +21,7 @@ export default function InvoiceListItem({
     Unpaid: "bg-slate-200 text-slate-700",
     Disputed: "bg-rose-100 text-rose-700",
     Paid: "bg-emerald-100 text-emerald-700",
-    Partially Paid: "bg-amber-100 text-amber-700",
+    "Partially Paid": "bg-amber-100 text-amber-700",
     Overdue: "bg-rose-200 text-rose-800",
     Awaited: "bg-yellow-100 text-yellow-700",
     Draft: "bg-slate-100 text-slate-600",
