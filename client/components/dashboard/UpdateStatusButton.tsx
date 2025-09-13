@@ -14,12 +14,15 @@ interface Props {
 export default function UpdateStatusButton({ value, onChange }: Props) {
   const statuses = [
     "Unpaid",
+    "Disputed",
+    "Paid",
     "Paid",
     "Partially Paid",
+    "Paid",
     "Overdue",
     "Awaited",
-    "Disputed",
     "Draft",
+    "Paid",
   ];
   return (
     <DropdownMenu>
