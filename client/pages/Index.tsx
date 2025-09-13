@@ -83,7 +83,7 @@ export default function Index() {
       <Header />
       <main className="mx-auto bg-white rounded-t-3xl max-w-md px-4 pb-24">
         <section className="-mt-6 pt-3">
-          <Card className="rounded-3xl border-none p-6 mb-8 mt-3 text-center bg-gray-100" >
+          <Card className="rounded-3xl border-none p-6 mb-8 mt-3 text-center bg-gray-100" style={{ border-radius: "45px" }} >
             
               <div className="flex flex-col items-center">
                 <div className="w-16 h-16 rounded-full bg-gradient-to-t from-[#5353ed] to-[#d90bcf] p-[6px]">
