@@ -71,7 +71,7 @@ export default function IncomeChart() {
           />
         </ComposedChart>
       </ResponsiveContainer>
-      <div className="mt-2 mb-2 flex items-center justify-center gap-6 text-xs">
+      <div className="mt-2 pb-2 flex items-center justify-center gap-6 text-xs">
         <div className="flex items-center gap-1">
           <span className="h-3 w-3 rounded-sm bg-[#8b5cf6]" /> income
         </div>
