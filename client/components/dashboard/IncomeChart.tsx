@@ -10,12 +10,12 @@ import {
 } from "recharts";
 
 const data = [
-  { name: "Jan", income: 3200, momGrowth: 2000 },
-  { name: "Feb", income: 4500, momGrowth: 4200 },
-  { name: "Mar", income: 6100, momGrowth: 3000 },
-  { name: "Apr", income: 3800, momGrowth: 5200 },
-  { name: "May", income: 7000, momGrowth: 1500 },
-  { name: "Jun", income: 5200, momGrowth: 6400 },
+  { name: "Jan", income: 3500, momGrowth: 20 },
+  { name: "Feb", income: 4800, momGrowth: 40 },
+  { name: "Mar", income: 7000, momGrowth: 50 },
+  { name: "Apr", income: 3000, momGrowth: -70 },
+  { name: "May", income: 5500, momGrowth: 60 },
+  { name: "Jun", income: 4000, momGrowth: -100 },
 ];
 
 export default function IncomeChart() {
@@ -36,16 +36,21 @@ export default function IncomeChart() {
           <YAxis
             yAxisId="left"
             tick={{ fill: "#6b7280", fontSize: 12 }}
-            axisLine={false}
+            axisLine={{ stroke: "#8b5cf6" }}
             tickLine={false}
+            domain={[0, 8000]}
+            ticks={[0, 2000, 4000, 6000, 8000]}
             tickFormatter={(v: number) => `$${v / 1000}k`}
           />
           <YAxis
             yAxisId="right"
             orientation="right"
             tick={{ fill: "#6b7280", fontSize: 12 }}
-            axisLine={false}
+            axisLine={{ stroke: "#7f1d1d" }}
             tickLine={false}
+            domain={[-100, 100]}
+            ticks={[-100, -50, 0, 50, 100]}
+            tickFormatter={(v: number) => `${v}%`}
           />
           <Tooltip cursor={{ fill: "rgba(124,58,237,0.05)" }} />
           <Bar
@@ -61,7 +66,8 @@ export default function IncomeChart() {
             dataKey="momGrowth"
             stroke="#7f1d1d"
             strokeWidth={3}
-            dot={{ r: 3 }}
+            dot={{ r: 4, stroke: "#7f1d1d", fill: "#7f1d1d" }}
+            activeDot={{ r: 5 }}
           />
         </ComposedChart>
       </ResponsiveContainer>
