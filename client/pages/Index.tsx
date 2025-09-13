@@ -69,8 +69,11 @@ export default function Index() {
 
         <section className="mt-6">
           <button className="mb-3 flex w-full items-center justify-between" onClick={() => setInvoicesOpen((v) => !v)} aria-expanded={invoicesOpen}>
-            <h3 className="text-base font-semibold">Your Invoices</h3>
-            <ChevronDown className={`h-5 w-5 transition-transform ${invoicesOpen ? "rotate-180" : "rotate-0"}`} />
+            <div className="flex items-center gap-2">
+              <ChevronDown className={`h-5 w-5 transition-transform ${invoicesOpen ? "rotate-0" : "rotate-180"}`} />
+              <h3 className="text-base font-semibold">Your Invoices</h3>
+            </div>
+            <span className="text-sm text-muted-foreground"> </span>
           </button>
           {invoicesOpen && (
             <div className="space-y-3">
