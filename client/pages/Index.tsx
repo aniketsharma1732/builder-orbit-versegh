@@ -1,6 +1,5 @@
 import { useState } from "react";
 import Header from "@/components/dashboard/Header";
-import KPI from "@/components/dashboard/KPI";
 import PeriodSelector from "@/components/dashboard/PeriodSelector";
 import IncomeChart from "@/components/dashboard/IncomeChart";
 import InvoiceListItem from "@/components/dashboard/InvoiceListItem";
@@ -51,10 +50,21 @@ export default function Index() {
           </Card>
         </section>
 
-        <section className="mt-5 grid grid-cols-2 gap-3">
-          <KPI label="Total Earnings" value="$1,25,000" />
-          <KPI label="Payment Awaited" value="$25,000" />
-          <KPI label="Payment Overdue" value="$25,000" />
+        <section className="mt-5 space-y-4">
+          <div className="p-4 rounded-2xl bg-white shadow">
+            <p className="text-gray-500 text-sm">Total Earnings</p>
+            <p className="text-3xl font-bold text-purple-700">$1,25,000</p>
+          </div>
+          <div className="grid grid-cols-2 gap-4">
+            <div className="p-4 rounded-2xl text-center bg-white shadow">
+              <p className="text-sm text-gray-500">Payment Awaited</p>
+              <p className="font-bold text-purple-600">$25,000</p>
+            </div>
+            <div className="p-4 rounded-2xl text-center bg-white shadow">
+              <p className="text-sm text-gray-500">Payment Overdue</p>
+              <p className="font-bold text-purple-600">$25,000</p>
+            </div>
+          </div>
         </section>
 
         <section className="mt-6">
