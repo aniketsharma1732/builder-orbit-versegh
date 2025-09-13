@@ -109,8 +109,8 @@ export default function Index() {
             </div>
         </section>
 
-        <section className="mt-4">
-          <Card className="rounded-3xl mt-8border-slate-200 p-5 shadow-sm">
+        <section className="mt-8">
+          <Card className="rounded-3xl border-slate-200 p-5 shadow-sm">
             <PeriodSelector active={period} onChange={setPeriod} />
           </Card>
         </section>
