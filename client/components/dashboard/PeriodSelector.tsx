@@ -21,7 +21,7 @@ export default function PeriodSelector({
       </div>
 
       {/* First row */}
-      <div className="flex flex-wrap items-center gap-2">
+      <div className="bg-gradient-to-t from-[#5353ed] to-[#d90bcf] bg-clip-text text-transparent flex flex-wrap items-center gap-2">
         <button
           className={`${base} ${active === "1M" ? on : off}`}
           onClick={() => onChange("1M")}
