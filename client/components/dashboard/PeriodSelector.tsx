@@ -33,7 +33,7 @@ export default function PeriodSelector({
           3Months
         </button>
         <button
-          className={`${base} ${active === "1Y" ? on : off}`}
+          className={`${base} ${active === "1Y 👑" ? on : off}`}
           onClick={() => onChange("1Y")}
         >
           <span className="mr-1 inline-block">
