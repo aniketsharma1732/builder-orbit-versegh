@@ -12,7 +12,6 @@ export default function Index() {
   const [period, setPeriod] = useState<"1M" | "3M" | "1Y">("3M");
   const [invoicesOpen, setInvoicesOpen] = useState(true);
   const [firstStatus, setFirstStatus] = useState("Unpaid");
-  const [density, setDensity] = useState<"spacious" | "compact">("spacious");
 
   const invoices = [
     { title: "Client Name", amount: "1,25,000", due: "2024-06-15", status: firstStatus },
@@ -27,26 +26,20 @@ export default function Index() {
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-primary/10 via-white to-white">
-      <Header density={density} />
+      <Header />
       <main className="mx-auto max-w-md px-4 pb-24">
-        <div className="-mt-5 mb-3 flex justify-end text-xs">
-          <div className="inline-flex rounded-full border border-slate-200 bg-white p-0.5 shadow-sm">
-            <button className={`rounded-full px-3 py-1 ${density === "spacious" ? "bg-primary/10 text-primary" : "text-foreground/70"}`} onClick={() => setDensity("spacious")}>Spacious</button>
-            <button className={`rounded-full px-3 py-1 ${density === "compact" ? "bg-primary/10 text-primary" : "text-foreground/70"}`} onClick={() => setDensity("compact")}>Compact</button>
-          </div>
-        </div>
-        <section className={density === "compact" ? "-mt-4" : "-mt-6"}>
-          <Card className={density === "compact" ? "rounded-2xl border-slate-200 p-4 shadow-sm" : "rounded-3xl border-slate-200 p-5 shadow-sm"}>
-            <div className={density === "compact" ? "rounded-2xl bg-slate-100/70 p-4 text-center ring-1 ring-white/60" : "rounded-3xl bg-slate-100/70 p-6 text-center ring-1 ring-white/60"}>
-              <div className={density === "compact" ? "mx-auto mb-3 flex h-12 w-12 items-center justify-center rounded-full border-2 border-primary/60 bg-white text-primary" : "mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-full border-2 border-primary/60 bg-white text-primary"}>
-                <Plus className={density === "compact" ? "h-6 w-6" : "h-8 w-8"} />
+        <section className="-mt-6">
+          <Card className="rounded-3xl border-slate-200 p-5 shadow-sm">
+            <div className="rounded-3xl bg-gradient-to-b from-slate-50 to-white p-6 text-center ring-1 ring-slate-100">
+              <div className="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-full border-2 border-primary/40 bg-white text-primary shadow-inner">
+                <Plus className="h-8 w-8" />
               </div>
-              <h2 className={density === "compact" ? "text-lg font-semibold text-primary" : "text-xl font-semibold text-primary"}>Create New Invoice</h2>
+              <h2 className="text-xl font-semibold text-primary">Create New Invoice</h2>
               <p className="mt-1 text-sm text-muted-foreground">Start by creating and sending new invoice</p>
-              <div className="mt-3 text-xs text-primary">Or Upload an existing invoice and set payment reminder</div>
+              <div className="mt-4 text-xs text-primary">Or Upload an existing invoice and set payment reminder</div>
             </div>
 
-            <div className={density === "compact" ? "mt-4" : "mt-6"}>
+            <div className="mt-6">
               <PeriodSelector active={period} onChange={setPeriod} />
             </div>
           </Card>
