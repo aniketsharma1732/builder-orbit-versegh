@@ -81,7 +81,7 @@ export default function Index() {
   return (
     <div className="min-h-screen bg-gradient-to-b from-primary/10 via-white to-white">
       <Header />
-      <main className="mx-auto bg-white rounded-t-3xl max-w-md px-4 pb-24">
+      <main className="mx-auto bg-white  rounded-t-3xl max-w-md px-4 pb-24">
         <section className="-mt-6 pt-3">
           <Card className="rounded-3xl border-none p-6 mb-8 mt-3 text-center bg-gray-100"  >
             
