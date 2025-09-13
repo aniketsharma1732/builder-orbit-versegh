@@ -1,8 +1,8 @@
 import { Calendar, Crown } from "lucide-react";
 
 interface PeriodSelectorProps {
-  active: "1M" | "3M" | "1Y";
-  onChange: (v: "1M" | "3M" | "1Y") => void;
+  active: "1M" | "3M" | "1Y 👑";
+  onChange: (v: "1M" | "3M" | "1Y 👑") => void;
 }
 
 export default function PeriodSelector({
