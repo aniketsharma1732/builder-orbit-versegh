@@ -8,7 +8,7 @@ interface HeaderProps {
 
 export default function Header({ title = "Dashboard", onBack }: HeaderProps) {
   return (
-    <header className="sticky top-0 z-20 mb-6">
+    <header className=" top-0 z-20 mb-6">
       <div className="h-14 w-full bg-gradient-to-b from-primary/20 to-transparent" />
       <div className="absolute inset-x-0 top-0 mx-auto max-w-md px-4">
         <div className="mt-2 flex h-10 items-center justify-between rounded-full bg-white/70 px-3 shadow-md ring-1 ring-black/5 backdrop-blur supports-[backdrop-filter]:bg-white/60">
