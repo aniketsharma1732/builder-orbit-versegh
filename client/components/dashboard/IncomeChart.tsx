@@ -20,7 +20,7 @@ const data = [
 
 export default function IncomeChart() {
   return (
-    <div className="h-64 w-full">
+    <div className="h-64 pb-6 w-full">
       <ResponsiveContainer width="100%" height="100%">
         <ComposedChart
           data={data}
@@ -71,7 +71,7 @@ export default function IncomeChart() {
           />
         </ComposedChart>
       </ResponsiveContainer>
-      <div className="mt-2 pb-2 flex items-center justify-center gap-6 text-xs">
+      <div className="mt-2 flex items-center justify-center gap-6 text-xs">
         <div className="flex items-center gap-1">
           <span className="h-3 w-3 rounded-sm bg-[#8b5cf6]" /> income
         </div>
