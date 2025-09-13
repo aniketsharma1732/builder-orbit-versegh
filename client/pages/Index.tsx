@@ -83,8 +83,8 @@ export default function Index() {
       <Header />
       <main className="mx-auto bg-white rounded-t-3xl max-w-md px-4 pb-24">
         <section className="-mt-6">
-          <Card className="rounded-3xl p-5 ">
-            <div className="rounded-2xl shadow p-6 text-center bg-white">
+          <Card className="rounded-3xl border-slate-200 p-5 shadow-sm">
+            <div className="rounded-2xl p-6 text-center bg-white">
               <div className="flex flex-col items-center">
                 <div className="w-16 h-16 rounded-full bg-gradient-to-t from-[#5353ed] to-[#d90bcf] p-[6px]">
                   <div className="w-full h-full rounded-full bg-white flex items-center justify-center">
