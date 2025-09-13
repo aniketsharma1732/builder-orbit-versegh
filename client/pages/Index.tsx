@@ -13,16 +13,69 @@ export default function Index() {
   const [firstStatus, setFirstStatus] = useState("Unpaid");
 
   const invoices = [
-    { title: "Client Name", amount: "1,25,000", due: "2024-06-15", status: firstStatus }, // Unpaid (controlled)
-    { title: "Client Name", amount: "1,25,000", due: "2024-06-15", status: "Disputed" },
-    { title: "Income Trend", amount: "1,25,000", due: "2024-06-15", status: "Paid" },
-    { title: "Income Trend", amount: "1,25,000", due: "2024-06-15", status: "Paid" },
-    { title: "Income Trend", amount: "1,25,000", due: "2024-06-15", status: "Partially Paid" },
-    { title: "Income Trend", amount: "1,25,000", due: "2024-06-15", status: "Paid" },
-    { title: "Income Trend", amount: "1,25,000", due: "2024-06-15", status: "Overdue", icon: "bell" as const },
-    { title: "Income Trend", amount: "1,25,000", due: "2024-06-15", status: "Awaited", icon: "bell" as const },
-    { title: "Income Trend", amount: "1,25,000", due: "2024-06-15", status: "Draft", icon: "pencil" as const },
-    { title: "Income Trend", amount: "1,25,000", due: "2024-06-15", status: "Paid" },
+    {
+      title: "Client Name",
+      amount: "1,25,000",
+      due: "2024-06-15",
+      status: firstStatus,
+    }, // Unpaid (controlled)
+    {
+      title: "Client Name",
+      amount: "1,25,000",
+      due: "2024-06-15",
+      status: "Disputed",
+    },
+    {
+      title: "Income Trend",
+      amount: "1,25,000",
+      due: "2024-06-15",
+      status: "Paid",
+    },
+    {
+      title: "Income Trend",
+      amount: "1,25,000",
+      due: "2024-06-15",
+      status: "Paid",
+    },
+    {
+      title: "Income Trend",
+      amount: "1,25,000",
+      due: "2024-06-15",
+      status: "Partially Paid",
+    },
+    {
+      title: "Income Trend",
+      amount: "1,25,000",
+      due: "2024-06-15",
+      status: "Paid",
+    },
+    {
+      title: "Income Trend",
+      amount: "1,25,000",
+      due: "2024-06-15",
+      status: "Overdue",
+      icon: "bell" as const,
+    },
+    {
+      title: "Income Trend",
+      amount: "1,25,000",
+      due: "2024-06-15",
+      status: "Awaited",
+      icon: "bell" as const,
+    },
+    {
+      title: "Income Trend",
+      amount: "1,25,000",
+      due: "2024-06-15",
+      status: "Draft",
+      icon: "pencil" as const,
+    },
+    {
+      title: "Income Trend",
+      amount: "1,25,000",
+      due: "2024-06-15",
+      status: "Paid",
+    },
   ];
 
   return (
@@ -35,17 +88,24 @@ export default function Index() {
               <div className="flex flex-col items-center">
                 <div className="w-16 h-16 rounded-full bg-gradient-to-t from-[#5353ed] to-[#d90bcf] p-[6px]">
                   <div className="w-full h-full rounded-full bg-white flex items-center justify-center">
-                    <span className="bg-gradient-to-t from-[#5353ed] to-[#d90bcf] bg-clip-text text-transparent font-semibold text-6xl pb-2">＋</span>
+                    <span className="bg-gradient-to-t from-[#5353ed] to-[#d90bcf] bg-clip-text text-transparent font-semibold text-6xl pb-2">
+                      ＋
+                    </span>
                   </div>
                 </div>
-                <h2 className="bg-gradient-to-t from-[#5353ed] to-[#d90bcf] bg-clip-text text-transparent mt-3 font-bold text-2xl leading-8">Create New Invoice</h2>
-                <p className="text-sm text-gray-500">Start by creating and sending new invoice</p>
+                <h2 className="bg-gradient-to-t from-[#5353ed] to-[#d90bcf] bg-clip-text text-transparent mt-3 font-bold text-2xl leading-8">
+                  Create New Invoice
+                </h2>
+                <p className="text-sm text-gray-500">
+                  Start by creating and sending new invoice
+                </p>
               </div>
             </div>
             <div className="text-center">
-              <p className="text-xs text-purple-500 mt-2">Or Upload an existing invoice and set payment reminder</p>
+              <p className="text-xs text-purple-500 mt-2">
+                Or Upload an existing invoice and set payment reminder
+              </p>
             </div>
-
           </Card>
         </section>
 
@@ -75,7 +135,9 @@ export default function Index() {
         <section className="mt-6">
           <Card className="rounded-3xl border-slate-200 p-5">
             <h3 className="text-base font-semibold">Income Trend</h3>
-            <p className="mt-1 text-sm text-muted-foreground">Your monthly income and growth for the last 6 months.</p>
+            <p className="mt-1 text-sm text-muted-foreground">
+              Your monthly income and growth for the last 6 months.
+            </p>
             <div className="mt-3">
               <IncomeChart />
             </div>
@@ -83,9 +145,15 @@ export default function Index() {
         </section>
 
         <section className="mt-6">
-          <button className="mb-3 flex w-full items-center justify-between" onClick={() => setInvoicesOpen((v) => !v)} aria-expanded={invoicesOpen}>
+          <button
+            className="mb-3 flex w-full items-center justify-between"
+            onClick={() => setInvoicesOpen((v) => !v)}
+            aria-expanded={invoicesOpen}
+          >
             <h3 className="text-base font-semibold">Your Invoices</h3>
-            <ChevronDown className={`h-5 w-5 transition-transform ${invoicesOpen ? "rotate-0" : "rotate-180"}`} />
+            <ChevronDown
+              className={`h-5 w-5 transition-transform ${invoicesOpen ? "rotate-0" : "rotate-180"}`}
+            />
           </button>
           {invoicesOpen && (
             <div className="space-y-3">
@@ -93,7 +161,14 @@ export default function Index() {
                 <InvoiceListItem
                   key={idx}
                   {...inv}
-                  rightElement={idx === 0 ? (<UpdateStatusButton value={firstStatus} onChange={setFirstStatus} />) : undefined}
+                  rightElement={
+                    idx === 0 ? (
+                      <UpdateStatusButton
+                        value={firstStatus}
+                        onChange={setFirstStatus}
+                      />
+                    ) : undefined
+                  }
                 />
               ))}
             </div>
