@@ -13,10 +13,12 @@ export default function Index() {
   const [firstStatus, setFirstStatus] = useState("Unpaid");
 
   const invoices = [
-    { title: "Client Name", amount: "1,25,000", due: "2024-06-15", status: firstStatus },
+    { title: "Client Name", amount: "1,25,000", due: "2024-06-15", status: firstStatus }, // Unpaid (controlled)
     { title: "Client Name", amount: "1,25,000", due: "2024-06-15", status: "Disputed" },
     { title: "Income Trend", amount: "1,25,000", due: "2024-06-15", status: "Paid" },
+    { title: "Income Trend", amount: "1,25,000", due: "2024-06-15", status: "Paid" },
     { title: "Income Trend", amount: "1,25,000", due: "2024-06-15", status: "Partially Paid" },
+    { title: "Income Trend", amount: "1,25,000", due: "2024-06-15", status: "Paid" },
     { title: "Income Trend", amount: "1,25,000", due: "2024-06-15", status: "Overdue", icon: "bell" as const },
     { title: "Income Trend", amount: "1,25,000", due: "2024-06-15", status: "Awaited", icon: "bell" as const },
     { title: "Income Trend", amount: "1,25,000", due: "2024-06-15", status: "Draft", icon: "pencil" as const },
@@ -79,11 +81,8 @@ export default function Index() {
 
         <section className="mt-6">
           <button className="mb-3 flex w-full items-center justify-between" onClick={() => setInvoicesOpen((v) => !v)} aria-expanded={invoicesOpen}>
-            <div className="flex items-center gap-2">
-              <ChevronDown className={`h-5 w-5 transition-transform ${invoicesOpen ? "rotate-0" : "rotate-180"}`} />
-              <h3 className="text-base font-semibold">Your Invoices</h3>
-            </div>
-            <span className="text-sm text-muted-foreground"> </span>
+            <h3 className="text-base font-semibold">Your Invoices</h3>
+            <ChevronDown className={`h-5 w-5 transition-transform ${invoicesOpen ? "rotate-0" : "rotate-180"}`} />
           </button>
           {invoicesOpen && (
             <div className="space-y-3">
