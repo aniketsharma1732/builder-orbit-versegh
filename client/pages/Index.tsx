@@ -102,7 +102,7 @@ export default function Index() {
               </div>
             
           </Card>
-          <div className="text-center">
+          <div className="text-center mt-3 mb-3">
               <p className="text-xs text-purple-500 mt-2">
                 Or Upload an existing invoice and set payment reminder
               </p>
