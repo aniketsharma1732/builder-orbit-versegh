@@ -5,7 +5,7 @@ import PeriodSelector from "@/components/dashboard/PeriodSelector";
 import IncomeChart from "@/components/dashboard/IncomeChart";
 import InvoiceListItem from "@/components/dashboard/InvoiceListItem";
 import UpdateStatusButton from "@/components/dashboard/UpdateStatusButton";
-import { Plus, ChevronDown } from "lucide-react";
+import { ChevronDown } from "lucide-react";
 import { Card } from "@/components/ui/card";
 
 export default function Index() {
@@ -30,13 +30,19 @@ export default function Index() {
       <main className="mx-auto max-w-md px-4 pb-24">
         <section className="-mt-6">
           <Card className="rounded-3xl border-slate-200 p-5 shadow-sm">
-            <div className="rounded-3xl bg-gradient-to-b from-slate-50 to-white p-6 text-center ring-1 ring-slate-100">
-              <div className="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-full border-2 border-primary/40 bg-white text-primary shadow-inner">
-                <Plus className="h-8 w-8" />
+            <div className="rounded-2xl shadow p-6 text-center bg-white">
+              <div className="flex flex-col items-center">
+                <div className="w-16 h-16 rounded-full bg-gradient-to-t from-[#5353ed] to-[#d90bcf] p-[6px]">
+                  <div className="w-full h-full rounded-full bg-white flex items-center justify-center">
+                    <span className="bg-gradient-to-t from-[#5353ed] to-[#d90bcf] bg-clip-text text-transparent font-semibold text-6xl pb-2">＋</span>
+                  </div>
+                </div>
+                <h2 className="bg-gradient-to-t from-[#5353ed] to-[#d90bcf] bg-clip-text text-transparent mt-3 font-bold text-2xl leading-8">Create New Invoice</h2>
+                <p className="text-sm text-gray-500">Start by creating and sending new invoice</p>
               </div>
-              <h2 className="text-xl font-semibold text-primary">Create New Invoice</h2>
-              <p className="mt-1 text-sm text-muted-foreground">Start by creating and sending new invoice</p>
-              <div className="mt-4 text-xs text-primary">Or Upload an existing invoice and set payment reminder</div>
+            </div>
+            <div className="text-center">
+              <p className="text-xs text-purple-500 mt-2">Or Upload an existing invoice and set payment reminder</p>
             </div>
 
             <div className="mt-6">
