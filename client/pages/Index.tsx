@@ -83,8 +83,8 @@ export default function Index() {
       <Header />
       <main className="mx-auto bg-white rounded-t-3xl max-w-md px-4 pb-24">
         <section className="-mt-6 pt-3">
-          <Card className="rounded-3xl border-slate-200 p-5 shadow-sm">
-            <div className="rounded-2xl shadow p-6 text-center bg-gray">
+          <Card className="rounded-2xl shadow p-6 text-center bg-gray">
+            
               <div className="flex flex-col items-center">
                 <div className="w-16 h-16 rounded-full bg-gradient-to-t from-[#5353ed] to-[#d90bcf] p-[6px]">
                   <div className="w-full h-full rounded-full bg-white flex items-center justify-center">
@@ -100,7 +100,7 @@ export default function Index() {
                   Start by creating and sending new invoice
                 </p>
               </div>
-            </div>
+            
           </Card>
           <div className="text-center">
               <p className="text-xs text-purple-500 mt-2">
