@@ -46,9 +46,12 @@ export default function Index() {
               <p className="text-xs text-purple-500 mt-2">Or Upload an existing invoice and set payment reminder</p>
             </div>
 
-            <div className="mt-6">
-              <PeriodSelector active={period} onChange={setPeriod} />
-            </div>
+          </Card>
+        </section>
+
+        <section className="mt-4">
+          <Card className="rounded-3xl border-slate-200 p-5 shadow-sm">
+            <PeriodSelector active={period} onChange={setPeriod} />
           </Card>
         </section>
 
